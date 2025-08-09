@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Disc Finder: Disc Golf Bag</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <meta name="description" content="Disc Finder: Disc Golf Bag, Disc Finder, DiscFinder Disc Golf, Disc Golf App, App Store, Apple, iOS, Google Play, Google, Android">
-    <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <meta name="description" content="Disc Finder: Disc Golf Bag, Disc Finder, DiscFinder Disc Golf, Disc Golf App, App Store, Apple, iOS, Google Play, Google, Android" />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <style>
         html, body {
             min-width: 331px !important;
@@ -110,6 +109,15 @@
             text-decoration: none !important;
         }
 
+        .nav-links a[href="feedback.html"] {
+        background: rgba(30, 178, 201, 0.15) !important;
+        color: #1eb2c9 !important;
+        border: 1px solid rgba(30, 178, 201, 0.5) !important;
+        box-shadow: 0 0 10px rgba(30, 178, 201, 0.25) !important;
+        text-decoration: none !important;
+        pointer-events: none; /* Optional: disable clicking again */
+        }
+
         /* Main Content */
         main {
             background: #2a2a2a;
@@ -139,6 +147,16 @@
             background-clip: padding-box, border-box;
             max-width: 680px;
             width: 100%;
+        }
+
+        iframe {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 640px;
+            height: 1000px; /* reduced height */
+            border-radius: 8px;
+            border: none;
         }
 
         .form-title {
@@ -297,9 +315,8 @@
         }
         
         @media (max-width: 768px) {
-            .form-container iframe {
-                width: 100% !important;
-                max-width: 640px;
+            iframe {
+                height: 1200px !important;
             }
         }
     </style>
@@ -307,7 +324,7 @@
 <body>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4" style="border-bottom: 2px solid #E52A5E !important;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none logo">
-            <img class="bi me-2" width="40" height="40" src="images/logo.png" alt="Disc Finder Logo">
+            <img class="bi me-2" width="40" height="40" src="images/logo.png" alt="Disc Finder Logo" />
             <span class="fs-4">Disc Finder: Disc Golf Bag</span>
         </a>
 
@@ -326,13 +343,14 @@
                 <p class="form-description">
                     Help us improve Disc Finder by sharing your thoughts, suggestions, and experiences with the app.
                 </p>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe8HQbZ6rwmdtrsySQLy2qrrqCJfHio2tK3OYC9AevUpXfYoQ/viewform?embedded=true" 
-                        width="640" 
-                        height="1192" 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0"
-                        style="width: 100%; max-width: 640px; border-radius: 8px;">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe8HQbZ6rwmdtrsySQLy2qrrqCJfHio2tK3OYC9AevUpXfYoQ/viewform?embedded=true" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    loading="lazy"
+                    scrolling="yes"
+                >
                     Loading…
                 </iframe>
             </div>
@@ -350,7 +368,7 @@
                     </a>
                     <div class="hazy-logo">
                         <a href="mailto:discfinderapp@gmail.com">
-                            <img src="images/hazy_outpost.png" alt="Hazy Outpost">
+                            <img src="images/hazy_outpost.png" alt="Hazy Outpost" />
                         </a>
                     </div>
                 </div>
@@ -415,4 +433,3 @@
     </script>
 </body>
 </html>
-
