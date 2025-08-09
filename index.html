@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
      
     <style>
-               html, body {
-  min-width: 331px !important;
-  overflow-x: auto !important;
-}
+        html, body {
+        min-width: 331px !important;
+        overflow-x: auto !important;
+        }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-  
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -112,6 +110,15 @@
         .nav-links a:visited {
             color: #e0e0e0 !important;
             text-decoration: none !important;
+        }
+
+        .nav-links a[href="index.html"] {
+        background: rgba(30, 178, 201, 0.15) !important;
+        color: #1eb2c9 !important;
+        border: 1px solid rgba(30, 178, 201, 0.5) !important;
+        box-shadow: 0 0 10px rgba(30, 178, 201, 0.25) !important;
+        text-decoration: none !important;
+        pointer-events: none;
         }
 
         /* Hero Section */
@@ -693,4 +700,3 @@
     </script>
 </body>
 </html>
-
