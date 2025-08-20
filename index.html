@@ -418,6 +418,19 @@
             filter: drop-shadow(0 0 25px rgba(30, 178, 201, 0.6)) drop-shadow(0 0 35px rgba(30, 178, 201, 0.4));
         }
 
+                #about {
+            max-width: 700px;    /* limits width */
+            margin: 0 auto;      /* centers horizontally */
+            padding: 20px;       /* optional spacing */
+            text-align: center;  /* centers heading and list items if desired */
+        }
+
+        .feature-list {
+            text-align: left;    /* keep bullets readable */
+            margin: 0 auto;      /* centers the ul within the section */
+            padding-left: 20px;  /* indent bullets */
+        }
+
         /* Footer */
         footer {
             background: #0d0d0d;
@@ -517,7 +530,7 @@
     <section class="hero">
         <div class="container">
             <div class="support-notice">
-                <p><strong>Thanks for being one of the 26k daily users!</strong> While this app is free to you, the developer incurs monthly costs for app upkeep, API hosting, and database maintenance. Consider showing your appreciation through PayPal or leave a positive review on the App Store / Google Play.</p>
+                <p><strong>Thanks for being one of the nearly 30k daily users!</strong> While this app is free to you, the developer incurs monthly costs for app upkeep, API hosting, and database maintenance. Consider showing your appreciation through PayPal or leave a positive review on the App Store / Google Play.</p>
                 <a href="https://paypal.me/hazyoutpost" class="paypal-link">
                     <img src="images/paypal.png" alt="Support via PayPal">
                 </a>
@@ -539,9 +552,19 @@
     <main>
         <section id="about" class="container">
             <h2 class="section-title">Why Choose Disc Finder?</h2>
-            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem; color: #b0b0b0;">
-                Disc Finder offers a broader selection of disc molds and a more complete, detailed specification dataset than any other alternative. The Gap Report provides personalized disc suggestions by simply tapping the empty gaps between your discs. Build your digital disc golf library now!
-            </p>
+             <div class="features-grid">
+                <div class="feature-column">
+                    <ul class="feature-list">
+                                <li>True native iOS/Android mobile app</li>
+                                <li>Works completely offline</li>
+                                <li>Extensive, up-to-date database</li>
+                                <li>All base features are FREE</li>
+                                <li>NOT a web-based platform</li>
+                                <li>NOT AI-generated shovelware</li>
+                                <li>NOT a subscription-based model</li>
+                    </ul>
+                </div> 
+             </div>
         </section>
 
         <section id="features" class="container">
@@ -700,4 +723,3 @@
     </script>
 </body>
 </html>
-
