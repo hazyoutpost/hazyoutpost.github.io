@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Finder: Disc Golf Bag</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="Disc Finder: Disc Golf Bag, Disc Finder, DiscFinder Disc Golf, Disc Golf App, App Store, Apple, iOS, Google Play, Google, Android">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     
+    <style>
+        html, body {
+        min-width: 331px !important;
+        overflow-x: auto !important;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(229, 42, 94, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #E52A5E;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff !important;
+            padding-left: 20px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .logo span {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            /*padding-right: 20px;*/
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0 !important;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(30, 178, 201, 0.2);
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links a:hover {
+            background: rgba(30, 178, 201, 0.1) !important;
+            color: #1eb2c9 !important;
+            border: 1px solid rgba(30, 178, 201, 0.4) !important;
+            box-shadow: 0 0 8px rgba(30, 178, 201, 0.2) !important;
+            text-decoration: none !important;
+        }
+
+        .nav-links a.active {
+            background: rgba(30, 178, 201, 0.15) !important;
+            color: #1eb2c9 !important;
+            border: 1px solid rgba(30, 178, 201, 0.5) !important;
+            box-shadow: 0 0 10px rgba(30, 178, 201, 0.25) !important;
+            text-decoration: none !important;
+        }
+
+        .nav-links a:visited {
+            color: #e0e0e0 !important;
+            text-decoration: none !important;
+        }
+
+        .nav-links a[href="index.html"] {
+        background: rgba(30, 178, 201, 0.15) !important;
+        color: #1eb2c9 !important;
+        border: 1px solid rgba(30, 178, 201, 0.5) !important;
+        box-shadow: 0 0 10px rgba(30, 178, 201, 0.25) !important;
+        text-decoration: none !important;
+        pointer-events: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(229, 42, 94, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(30, 178, 201, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            background: linear-gradient(135deg, #1eb2c9, #4dd0e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(30, 178, 201, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            /*margin-bottom: 2rem;*/
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .app-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .app-badge {
+            transition: transform 0.3s ease;
+        }
+
+        .app-badge:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(30, 178, 201, 0.5));
+        }
+
+        .app-badge img {
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .support-notice {
+            background: rgba(30, 178, 201, 0.1);
+            border: 2px solid rgba(30, 178, 201, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            animation: fadeInUp 1s ease 0.6s both;
+            box-shadow: 0 0 30px rgba(30, 178, 201, 0.2);
+        }
+
+        .paypal-link {
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .paypal-link:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(30, 178, 201, 0.6));
+        }
+
+        .paypal-link img {
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        /* Main Content */
+        main {
+            background: #2a2a2a;
+            margin-top: -40px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            z-index: 10;
+            /* Add subtle cyan accent to the rounded top area */
+            border-top: 1px solid rgba(30, 178, 201, 0.5);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #1eb2c9, #4dd0e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(30, 178, 201, 0.4);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .feature-column {
+            background: #333333;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(30, 178, 201, 0.15);
+            border: 2px solid transparent;
+            background-image: linear-gradient(#333333, #333333), 
+                              linear-gradient(135deg, rgba(30, 178, 201, 0.4), rgba(30, 178, 201, 0.2));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            transition: all 0.3s ease;
+        }
+
+        .feature-column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 178, 201, 0.3);
+        }
+
+        .feature-column h3 {
+            color: #1eb2c9;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(30, 178, 201, 0.5);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(30, 178, 201, 0.2);
+            color: #e0e0e0;
+            padding-left: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            color: #1eb2c9;
+            text-shadow: 0 0 8px rgba(30, 178, 201, 0.4);
+        }
+
+        .feature-list li:before {
+            content: "•";
+            color: #1eb2c9;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            text-shadow: 0 0 8px rgba(30, 178, 201, 0.6);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Custom Bootstrap carousel styling for dark theme */
+        .carousel {
+            width: 323px;
+            padding: 0;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(30, 178, 201, 0.4);
+            border: 1px solid transparent;
+            background-image: linear-gradient(#333333, #333333), 
+                              linear-gradient(135deg, #1eb2c9, #4dd0e1);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .carousel-inner {
+            border-radius: 17px;
+            background-color: rgba(0, 0, 0, 0);
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            width: 323px;
+            height: 699px;
+            object-fit: cover;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(30, 178, 201, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(30, 178, 201, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact .section-title {
+            background: linear-gradient(135deg, #1eb2c9, #4dd0e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(30, 178, 201, 0.2), rgba(30, 178, 201, 0.1));
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: #1eb2c9;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), 
+                              linear-gradient(135deg, #1eb2c9, #4dd0e1);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            text-shadow: 0 0 10px rgba(30, 178, 201, 0.5);
+        }
+
+        .contact-email:hover {
+            background: linear-gradient(135deg, rgba(30, 178, 201, 0.3), rgba(30, 178, 201, 0.2));
+            color: white;
+            box-shadow: 0 0 30px rgba(30, 178, 201, 0.5), 0 0 40px rgba(30, 178, 201, 0.3);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .hazy-logo {
+            margin: 2rem 0;
+        }
+
+        .hazy-logo img {
+            max-width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hazy-logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 25px rgba(30, 178, 201, 0.6)) drop-shadow(0 0 35px rgba(30, 178, 201, 0.4));
+        }
+
+                #about {
+            max-width: 700px;    /* limits width */
+            margin: 0 auto;      /* centers horizontally */
+            padding: 20px;       /* optional spacing */
+            text-align: center;  /* centers heading and list items if desired */
+        }
+
+        .feature-list {
+            text-align: left;    /* keep bullets readable */
+            margin: 0 auto;      /* centers the ul within the section */
+            padding-left: 20px;  /* indent bullets */
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0d0d;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 500px) {
+            header {
+                padding: 0.5rem 0;
+            }
+            
+            .logo {
+                padding-left: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .logo span {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                /*padding-right: 10px;*/
+                gap: 0.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+            
+            /*.hero {
+                padding: 180px 0 80px;
+            }*/
+        }
+        
+        @media (max-width: 768px) {
+            /*.nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }*/
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .carousel {
+                max-width: 300px;
+            }
+
+            /*.carousel-item img {
+                height: 500px;
+            }*/
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4" style="border-bottom: 2px solid #E52A5E !important;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none logo">
+            <img class="bi me-2" width="40" height="40" src="images/logo.png" alt="Disc Finder Logo">
+            <span class="fs-4">Disc Finder: Disc Golf Bag</span>
+        </a>
+
+        <ul class="nav nav-pills nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">About</a></li>
+            <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+            <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
+            <li class="nav-item"><a href="terms.html" class="nav-link">Terms</a></li>
+            <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="support-notice">
+                <p><strong>Thanks for being one of the 35k+ daily users!</strong> While this app is free to you, the developer incurs monthly costs for app upkeep, API hosting, and database maintenance. Consider showing your appreciation through PayPal or leave a positive review on the App Store / Google Play.</p>
+                <a href="https://paypal.me/hazyoutpost" class="paypal-link">
+                    <img src="images/paypal.png" alt="Support via PayPal">
+                </a>
+            </div>
+            <h1>Ultimate Disc Golf Companion</h1>
+            <p>Search and compare discs across various manufacturers, helping you build the perfect bag. Works offline with no account required - capabilities not offered by other alternatives.</p>
+            
+            <div class="app-badges">
+                <a href="https://apps.apple.com/us/app/disc-finder-disc-golf-bag/id6478900206" class="app-badge">
+                    <img src="images/appstore.png" alt="Download on App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.hazyoutpost.discfinder" class="app-badge">
+                    <img src="images/googleplay.png" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="container">
+            <h2 class="section-title">Why Choose Disc Finder?</h2>
+             <div class="features-grid">
+                <div class="feature-column">
+                    <ul class="feature-list">
+                                <li>True native iOS/Android mobile app</li>
+                                <li>Works completely offline</li>
+                                <li>Extensive, up-to-date database</li>
+                                <li>All base features are FREE</li>
+                                <li>NOT a web-based platform</li>
+                                <li>NOT AI-generated shovelware</li>
+                                <li>NOT a subscription-based model</li>
+                    </ul>
+                </div> 
+             </div>
+        </section>
+
+        <section id="features" class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-column">
+                    <h3>Bag Builder Features</h3>
+                    <ul class="feature-list">
+                        <li>Create and customize up to five named bags</li>
+                        <li>Rapidly add discs by searching and adding to bag</li>
+                        <li>Add custom discs with unique flight details</li>
+                        <li>Add disc color, plastic, weight, and notes to all discs</li>
+                        <li>Add a custom photo of each disc</li>
+                        <li>Visualize inventory gaps and get disc suggestions</li>
+                        <li>Organize and sort discs into custom bags</li>
+                    </ul>
+                </div>
+                <div class="feature-column">
+                    <h3>Disc Finder Search Features</h3>
+                    <ul class="feature-list">
+                        <li>Find similar discs based on your search criteria</li>
+                        <li>Bag Builder feature to save discs to your Bag/Inventory</li>
+                        <li>Compare multiple disc manufacturers simultaneously</li>
+                        <li>Search for a specific mold, brand or Flight Number</li>
+                        <li>Compare similar plastic types across manufacturers</li>
+                        <li>Purchase discs through our retail sponsor 1010 Discs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots">
+            <div class="container">
+                <h2 class="section-title">App Screenshots</h2>
+                <div class="row d-flex justify-content-center">
+                    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/1.png" class="d-block w-100" alt="App Screenshot 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/2.png" class="d-block w-100" alt="App Screenshot 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/3.png" class="d-block w-100" alt="App Screenshot 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/4.png" class="d-block w-100" alt="App Screenshot 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/5.png" class="d-block w-100" alt="App Screenshot 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/6.png" class="d-block w-100" alt="App Screenshot 6">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="images/7.png" class="d-block w-100" alt="App Screenshot 7">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-info">
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        For feedback or business inquiries:
+                    </p>
+                    <a href="mailto:discfinderapp@gmail.com" class="contact-email">
+                        discfinderapp@gmail.com
+                    </a>
+                    <div class="hazy-logo">
+                        <a href="mailto:discfinderapp@gmail.com">
+                            <img src="images/hazy_outpost.png" alt="Hazy Outpost">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hazy Outpost. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation active state
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Header background effect
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 26, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(229, 42, 94, 0.4)';
+            } else {
+                header.style.background = 'rgba(26, 26, 26, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(229, 42, 94, 0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
