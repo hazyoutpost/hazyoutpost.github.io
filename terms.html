@@ -1,0 +1,236 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Finder: Disc Golf Bag</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="Disc Finder: Disc Golf Bag, Disc Finder, DiscFinder Disc Golf, Disc Golf App, App Store, Apple, iOS, Google Play, Google, Android">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+        html, body { min-width: 331px !important; overflow-x: auto !important; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        header { background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(229, 42, 94, 0.3); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border-bottom: 2px solid #E52A5E; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { display: flex; align-items: center; text-decoration: none; color: #ffffff !important; padding-left: 20px; }
+        .logo img { width: 40px; height: 40px; margin-right: 12px; }
+        .logo span { font-size: 1.3rem; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-links a { text-decoration: none; color: #e0e0e0 !important; font-weight: 500; border-radius: 8px; transition: all 0.3s ease; position: relative; border: 1px solid rgba(30, 178, 201, 0.2); padding: 0.5rem 1rem; }
+        .nav-links a:hover { background: rgba(30, 178, 201, 0.1) !important; color: #1eb2c9 !important; border: 1px solid rgba(30, 178, 201, 0.4) !important; box-shadow: 0 0 8px rgba(30, 178, 201, 0.2) !important; text-decoration: none !important; }
+        .nav-links a.active { background: rgba(30, 178, 201, 0.15) !important; color: #1eb2c9 !important; border: 1px solid rgba(30, 178, 201, 0.5) !important; box-shadow: 0 0 10px rgba(30, 178, 201, 0.25) !important; text-decoration: none !important; }
+        .nav-links a:visited { color: #e0e0e0 !important; text-decoration: none !important; }
+
+        /* Main Content */
+        main { background: #2a2a2a; min-height: 100vh; padding-top: 120px; border-top: 1px solid rgba(30, 178, 201, 0.5); }
+
+        .content-container { display: flex; justify-content: center; padding: 2rem 1rem; }
+        .content-wrapper { background: #333333; border-radius: 15px; padding: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(30, 178, 201, 0.15); border: 2px solid transparent; background-image: linear-gradient(#333333, #333333), linear-gradient(135deg, rgba(30, 178, 201, 0.4), rgba(30, 178, 201, 0.2)); background-origin: border-box; background-clip: padding-box, border-box; max-width: 800px; width: 100%; color: #ffffff; }
+        .content-wrapper h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; background: linear-gradient(135deg, #1eb2c9, #4dd0e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 0 20px rgba(30, 178, 201, 0.4); }
+        .content-wrapper p { color: #ffffff; line-height: 1.8; margin-bottom: 1rem; }
+        .content-wrapper a { color: #1eb2c9; text-decoration: none; transition: all 0.3s ease; }
+        .content-wrapper a:hover { color: #4dd0e1; text-shadow: 0 0 8px rgba(30, 178, 201, 0.6); }
+        .content-wrapper strong { color: #1eb2c9; text-shadow: 0 0 5px rgba(30, 178, 201, 0.3); }
+
+        /* Contact Section */
+        .contact { background: #1a1a1a; color: white; text-align: center; position: relative; overflow: hidden; padding: 80px 0; }
+        .contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(30, 178, 201, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(30, 178, 201, 0.08) 0%, transparent 50%); pointer-events: none; }
+        .contact > * { position: relative; z-index: 1; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; background: linear-gradient(135deg, #1eb2c9, #4dd0e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 0 20px rgba(30, 178, 201, 0.4); }
+        .contact-info { max-width: 600px; margin: 0 auto; }
+        .contact-email { display: inline-block; background: linear-gradient(135deg, rgba(30, 178, 201, 0.2), rgba(30, 178, 201, 0.1)); padding: 1rem 2rem; border-radius: 50px; color: #1eb2c9; text-decoration: none; font-size: 1.1rem; margin: 1rem; transition: all 0.3s ease; border: 2px solid transparent; background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), linear-gradient(135deg, #1eb2c9, #4dd0e1); background-origin: border-box; background-clip: padding-box, border-box; text-shadow: 0 0 10px rgba(30, 178, 201, 0.5); }
+        .contact-email:hover { background: linear-gradient(135deg, rgba(30, 178, 201, 0.3), rgba(30, 178, 201, 0.2)); color: white; box-shadow: 0 0 30px rgba(30, 178, 201, 0.5), 0 0 40px rgba(30, 178, 201, 0.3); text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); transform: translateY(-2px); }
+        .hazy-logo { margin: 2rem 0; }
+        .hazy-logo img { max-width: 200px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease; }
+        .hazy-logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(30, 178, 201, 0.6)) drop-shadow(0 0 35px rgba(30, 178, 201, 0.4)); }
+
+        footer { background: #0d0d0d; color: white; text-align: center; padding: 2rem 0; }
+
+        @media (max-width: 500px) {
+            header { padding: 0.5rem 0; }
+            .logo { padding-left: 10px; font-size: 0.9rem; }
+            .logo span { font-size: 1.1rem; }
+            .nav-links { gap: 0.2rem; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+            main { padding-top: 140px; }
+            .content-container { padding: 1rem 0.5rem; }
+            .content-wrapper { padding: 1.5rem; margin: 0 0.5rem; }
+            .content-wrapper h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4" style="border-bottom: 2px solid #E52A5E !important;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none logo">
+            <img class="bi me-2" width="40" height="40" src="images/logo.png" alt="Disc Finder Logo">
+            <span class="fs-4">Disc Finder: Disc Golf Bag</span>
+        </a>
+
+        <ul class="nav nav-pills nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">About</a></li>
+            <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+            <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
+            <li class="nav-item"><a href="terms.html" class="nav-link active">Terms</a></li>
+            <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <div class="content-wrapper">
+                <h2>Terms of Use</h2>
+                <p>
+                    <strong>Effective Date: September 28, 2025</strong><br><br>
+
+                    <strong>1. Acceptance of Terms</strong><br>
+                    By downloading, installing, or using the Disc Finder mobile application ("App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.<br><br>
+
+                    <strong>2. Description of Service</strong><br>
+                    Disc Finder is a mobile application designed with your privacy in mind. The App allows you to catalog and manage your disc golf disc inventory entirely on your device. All user data is stored locally on your device by default—we do not collect, transmit, or store your personal information on our servers.<br><br>
+
+                    <strong>3. Data Storage and Privacy</strong><br>
+                    • All your disc inventory, bag information, and personal data remains on your device<br>
+                    • We do not access, collect, or transmit your data to our servers<br>
+                    • If you choose to use device backup features (iOS iCloud or Android Auto Backup), your data may be backed up according to Apple's or Google's respective terms<br>
+                    • We do not control or access any data backed up through third-party services<br><br>
+
+                    <strong>4. User License</strong><br>
+                    We grant you a limited, non-exclusive, non-transferable, revocable license to use Disc Finder for personal, non-commercial purposes on devices that you own or control.<br><br>
+
+                    <strong>5. User Responsibilities</strong><br>
+                    You are responsible for:<br>
+                    • Maintaining the security of your device and any data stored locally<br>
+                    • Ensuring your device has adequate storage space<br>
+                    • Keeping the App updated to the latest version<br>
+                    • Using the App in compliance with all applicable laws and regulations<br><br>
+
+                    <strong>6. Prohibited Uses</strong><br>
+                    You may not:<br>
+                    • Attempt to reverse-engineer, decompile, or disassemble the App<br>
+                    • Modify, distribute, or create derivative works from the App<br>
+                    • Use the App for any unlawful purpose<br>
+                    • Attempt to circumvent any security features or access restrictions<br><br>
+
+                    <strong>7. App Store Terms</strong><br>
+                    <strong>Apple App Store:</strong> If you downloaded the App from the Apple App Store, you acknowledge that these Terms are between you and Hazy Outpost, not Apple. Apple is not responsible for the App or its content and has no obligation to provide maintenance or support.<br><br>
+                    <strong>Google Play Store:</strong> If you downloaded the App from Google Play, you acknowledge that these Terms are between you and Hazy Outpost, not Google. Google is not responsible for the App or its content and has no obligation to provide maintenance or support.<br><br>
+
+                    <strong>8. In-App Purchases</strong><br>
+                    • All in-app purchases are processed by Apple (for iOS) or Google (for Android)<br>
+                    • We do not store or process payment information<br>
+                    • Refunds for in-app purchases are subject to Apple's or Google's respective refund policies<br>
+                    • Pro features are tied to your Apple ID or Google account<br><br>
+
+                    <strong>9. Intellectual Property</strong><br>
+                    The App and its original content, features, and functionality are owned by Hazy Outpost and are protected by international copyright, trademark, and other intellectual property laws. You may not use our trademarks or trade dress without prior written consent.<br><br>
+
+                    <strong>10. Disclaimer of Warranties</strong><br>
+                    The App is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied. We do not warrant that:<br>
+                    • The App will be uninterrupted, secure, or error-free<br>
+                    • Any defects will be corrected<br>
+                    • The App is free of viruses or other harmful components<br>
+                    • Results obtained from use of the App will be accurate or reliable<br><br>
+
+                    <strong>11. Limitation of Liability</strong><br>
+                    To the maximum extent permitted by applicable law:<br>
+                    • We shall not be liable for any indirect, incidental, special, consequential, or punitive damages<br>
+                    • Our total liability shall not exceed the amount you paid for the App or Pro features, if any<br>
+                    • We are not responsible for data loss, device damage, or any damages arising from App use<br><br>
+
+                    <strong>12. Indemnification</strong><br>
+                    You agree to indemnify and hold harmless Hazy Outpost from any claims, damages, losses, costs, and expenses (including legal fees) arising from your use of the App or violation of these Terms.<br><br>
+
+                    <strong>13. Termination</strong><br>
+                    • We may terminate or suspend your access to the App at any time, with or without cause<br>
+                    • You may stop using the App at any time by deleting it from your device<br>
+                    • Upon termination, your right to use the App ceases immediately<br><br>
+
+                    <strong>14. Changes to Terms</strong><br>
+                    We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting in the App or on our website. Your continued use of the App after changes constitutes acceptance of the new Terms.<br><br>
+
+                    <strong>15. Governing Law</strong><br>
+                    These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.<br><br>
+
+                    <strong>16. Severability</strong><br>
+                    If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.<br><br>
+
+                    <strong>17. Entire Agreement</strong><br>
+                    These Terms constitute the entire agreement between you and Hazy Outpost regarding the use of the App and supersede all prior agreements.<br><br>
+
+                    <strong>18. Contact Information</strong><br>
+                    If you have any questions about these Terms, please contact us at:<br>
+                    <a href="mailto:discfinderapp@gmail.com">discfinderapp@gmail.com</a><br><br>
+
+                    <em>By using Disc Finder, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use.</em>
+                </p>
+            </div>
+        </div>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-info">
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        For feedback or business inquiries:
+                    </p>
+                    <a href="mailto:discfinderapp@gmail.com" class="contact-email">
+                        discfinderapp@gmail.com
+                    </a>
+                    <div class="hazy-logo">
+                        <a href="mailto:discfinderapp@gmail.com">
+                            <img src="images/hazy_outpost.png" alt="Hazy Outpost">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hazy Outpost. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+            });
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 26, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(229, 42, 94, 0.4)';
+            } else {
+                header.style.background = 'rgba(26, 26, 26, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(229, 42, 94, 0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
