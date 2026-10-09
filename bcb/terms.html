@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Big Card Blast - Terms of Use</title>
+    <meta name="description" content="Terms of Use for Big Card Blast.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg1: #3b1c8c;
+            --bg2: #1f1066;
+            --pink: #ff4fa3;
+            --orange: #ff9a3c;
+            --yellow: #ffe14d;
+            --green: #3de08a;
+            --cyan: #4fe3ff;
+            --purple: #9b6bff;
+            --white: #ffffff;
+            --muted: #e3dcff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { min-width: 320px; scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            color: var(--white);
+            font-family: "Trebuchet MS", "Arial Rounded MT Bold", "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            background:
+                radial-gradient(circle at 12% 8%, rgba(255, 79, 163, .45), transparent 26rem),
+                radial-gradient(circle at 92% 30%, rgba(79, 227, 255, .35), transparent 26rem),
+                radial-gradient(circle at 20% 90%, rgba(255, 225, 77, .25), transparent 24rem),
+                linear-gradient(160deg, var(--bg1), var(--bg2));
+            background-attachment: fixed;
+        }
+
+        /* SUIT COLORS — one color per suit, used everywhere on the page:
+           ♠ cyan (s1)   ♥ pink (s2)   ♦ orange (s3)   ♣ green (s4) */
+        .s1 { color: var(--cyan); }
+        .s2 { color: var(--pink); }
+        .s3 { color: var(--orange); }
+        .s4 { color: var(--green); }
+
+        /* Floaty symbols: small screens = near the top,
+           wide screens = in the side margins so the card never covers them */
+        .suits {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 520px;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .suits span {
+            position: absolute;
+            font-size: 2.4rem;
+            opacity: .35;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        .suits span:nth-child(1) { top: 95px;  left: 10px;  transform: rotate(-14deg); }
+        .suits span:nth-child(2) { top: 190px; right: 12px; transform: rotate(12deg); animation-delay: -2s; }
+        .suits span:nth-child(3) { top: 330px; left: 14px;  transform: rotate(10deg);  animation-delay: -4s; }
+        .suits span:nth-child(4) { top: 420px; right: 10px; transform: rotate(-10deg); animation-delay: -6s; }
+
+        @media (min-width: 1100px) {
+            .suits { position: fixed; inset: 0; height: auto; }
+            .suits span { font-size: 4.5rem; opacity: .4; }
+            .suits span:nth-child(1) { top: 16%; left: calc(50% - 510px);  right: auto; }
+            .suits span:nth-child(2) { top: 34%; right: calc(50% - 510px); left: auto; }
+            .suits span:nth-child(3) { top: 58%; left: calc(50% - 510px);  right: auto; }
+            .suits span:nth-child(4) { top: 76%; right: calc(50% - 510px); left: auto; }
+        }
+
+        @keyframes float {
+            0%, 100% { translate: 0 0; }
+            50%      { translate: 0 -16px; }
+        }
+
+        .site-header, main, .site-footer { position: relative; z-index: 1; }
+
+        .site-header {
+            padding: 18px 0 20px;
+            background: rgba(14, 6, 56, .45);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        .site-header::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--pink), var(--orange), var(--yellow), var(--green), var(--cyan), var(--purple));
+        }
+
+        .header-inner {
+            width: min(100% - 40px, 1100px);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            display: block;
+            width: auto;
+        }
+
+        main {
+            width: 100%;
+            flex: 1;
+            padding: clamp(24px, 5vw, 56px) 20px 64px;
+        }
+
+        .policy-shell {
+            width: min(100%, 800px);
+            margin: 0 auto;
+        }
+
+        .intro {
+            margin: 0 auto 22px;
+            max-width: 620px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            margin-bottom: 14px;
+            color: var(--yellow);
+            font-size: clamp(.85rem, 2.6vw, 1rem);
+            font-weight: 900;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            line-height: 1.15;
+            letter-spacing: -.03em;
+            font-weight: 900;
+            text-shadow: 0 3px 0 rgba(0, 0, 0, .2);
+        }
+
+        .intro p {
+            max-width: 540px;
+            margin: 16px auto 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 2vw, 1.12rem);
+        }
+
+        /* Key that explains what each suit means */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 22px;
+            margin: 0 0 26px;
+            padding: 0;
+            list-style: none;
+            color: var(--muted);
+            font-size: .92rem;
+            font-weight: 700;
+        }
+
+        .legend li > span { margin-right: 6px; font-size: 1.1em; }
+
+        /* Rainbow-bordered card */
+        .policy-card {
+            position: relative;
+            padding: clamp(20px, 4vw, 36px);
+            border: 4px solid transparent;
+            border-radius: 28px;
+            background:
+                linear-gradient(145deg, #2c1a86, #1d1170) padding-box,
+                linear-gradient(135deg, var(--pink), var(--orange), var(--yellow), var(--green), var(--cyan), var(--purple)) border-box;
+            box-shadow: 0 10px 0 rgba(0, 0, 0, .25), 0 30px 60px rgba(0, 0, 0, .3);
+        }
+
+        .effective {
+            margin: 0 0 22px;
+            color: var(--cyan);
+            font-weight: 800;
+            font-size: .95rem;
+        }
+
+        .policy-card section + section { margin-top: 26px; }
+
+        /* Each section belongs to one suit "family". The heading icon and the
+           bullet dots both use that family's suit and color. */
+        .policy-card section { --suit: "♣"; --suit-color: var(--green); }          /* fine print (default) */
+        .policy-card .device  { --suit: "♠"; --suit-color: var(--cyan); }          /* on your device */
+        .policy-card .you     { --suit: "♥"; --suit-color: var(--pink); }          /* you & the rules */
+        .policy-card .outside { --suit: "♦"; --suit-color: var(--orange); }        /* outside services */
+        .policy-card .highlight { --suit: "✓"; --suit-color: var(--yellow); }      /* quick summary */
+
+        .policy-card h2 {
+            margin: 0 0 8px;
+            color: var(--yellow);
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -.01em;
+        }
+
+        .policy-card h2::before {
+            content: var(--suit);
+            margin-right: 10px;
+            color: var(--suit-color);
+        }
+
+        .policy-card p {
+            margin: 0 0 10px;
+            color: var(--muted);
+        }
+
+        .policy-card ul {
+            margin: 0 0 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .policy-card li {
+            position: relative;
+            margin-bottom: 6px;
+            padding-left: 26px;
+            color: var(--muted);
+        }
+
+        /* Bullets are plain dots in the section's color, so the suit
+           only appears once per section (in the heading). */
+        .policy-card li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: var(--suit-color);
+            font-weight: 900;
+        }
+
+        /* The Quick Version keeps its checkmarks */
+        .highlight li::before { content: var(--suit); left: 2px; }
+
+        .policy-card strong { color: var(--white); }
+
+        .policy-card a {
+            color: var(--cyan);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .policy-card a:hover { color: var(--yellow); }
+
+        .highlight {
+            padding: 16px 18px;
+            border: 2px solid var(--suit-color);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .05);
+        }
+
+        /* Quick Version heading shows all four suits instead of one */
+        .highlight h2::before { content: none; }
+        .suitset { margin-right: 10px; letter-spacing: .12em; }
+
+        .site-footer {
+            padding: 30px 20px 28px;
+            color: var(--muted);
+            text-align: center;
+            font-size: .85rem;
+            background: rgba(14, 6, 56, .45);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        .site-footer::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--purple), var(--cyan), var(--green), var(--yellow), var(--orange), var(--pink));
+        }
+
+        .site-footer p { margin: 0; }
+
+        .footer-fun {
+            margin-bottom: 6px !important;
+            color: var(--white);
+            font-size: 1.05rem;
+            font-weight: 900;
+        }
+
+        .footer-links { margin-bottom: 6px !important; }
+
+        .footer-links a {
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .footer-links a:hover { color: var(--yellow); text-decoration: underline; }
+
+        .footer-legal { opacity: .75; font-size: .78rem; }
+
+        @media (max-width: 600px) {
+            .header-inner { width: calc(100% - 28px); }
+            main { padding: 20px 12px 42px; }
+            .policy-card { padding: 18px 16px; border-radius: 22px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .suits span { animation: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="suits" aria-hidden="true">
+        <span class="s2">♥</span>
+        <span class="s1">♠</span>
+        <span class="s3">♦</span>
+        <span class="s4">♣</span>
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="/" aria-label="Big Card Blast home">
+                <img class="brand-logo" src="images/logo.png" alt="Big Card Blast">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="policy-shell">
+            <div class="intro">
+                <div class="eyebrow"><span class="s1" aria-hidden="true">♠</span> <span class="s2" aria-hidden="true">♥</span> Play fair, have fun <span class="s3" aria-hidden="true">♦</span> <span class="s4" aria-hidden="true">♣</span></div>
+                <h1>Terms of Use</h1>
+                <p>The short version: play for fun, play fair, and remember your progress lives on your device.</p>
+            </div>
+
+            <ul class="legend" aria-label="Section key">
+                <li><span class="s1" aria-hidden="true">♠</span>On your device</li>
+                <li><span class="s2" aria-hidden="true">♥</span>You &amp; the rules</li>
+                <li><span class="s3" aria-hidden="true">♦</span>Outside services</li>
+                <li><span class="s4" aria-hidden="true">♣</span>The fine print</li>
+            </ul>
+
+            <article class="policy-card">
+                <p class="effective">Effective Date: October 9, 2026</p>
+
+                <section class="highlight">
+                    <h2><span class="suitset" aria-hidden="true"><span class="s1">♠</span><span class="s2">♥</span><span class="s3">♦</span><span class="s4">♣</span></span>The Quick Version</h2>
+                    <ul>
+                        <li>Big Card Blast is for your personal, non-commercial enjoyment.</li>
+                        <li>Play fair: no hacking, reverse-engineering, or copying the game.</li>
+                        <li>Your progress is stored only on your device, so we can't restore it if it's lost.</li>
+                        <li>The game is provided "as is," and these Terms may be updated from time to time.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Acceptance of Terms</h2>
+                    <p>By downloading, installing, or playing Big Card Blast (the "Game"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the Game. If you are under the age of majority where you live, please make sure a parent or guardian has reviewed these Terms with you.</p>
+                </section>
+
+                <section class="device">
+                    <h2>About the Game</h2>
+                    <p>Big Card Blast is a mobile card game from Hazy Outpost, designed with your privacy in mind. Your progress, scores, and settings are stored locally on your device, and we do not collect, transmit, or store them on our servers. No account is required to play.</p>
+                </section>
+
+                <section class="device">
+                    <h2>Your Game Data</h2>
+                    <ul>
+                        <li>Your progress, scores, and settings stay on your device.</li>
+                        <li>We do not access, collect, or transmit your game data.</li>
+                        <li>If you use device backup features (iCloud on iOS or Android Auto Backup), your data may be backed up according to Apple's or Google's terms.</li>
+                        <li>We do not control or have access to anything backed up through those services.</li>
+                    </ul>
+                    <p>For the full details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+                </section>
+
+                <section class="you">
+                    <h2>Your Responsibilities</h2>
+                    <p>You are responsible for:</p>
+                    <ul>
+                        <li>Maintaining the security of your device and the data stored on it</li>
+                        <li>Making sure your device has enough storage space for the Game</li>
+                        <li>Keeping the Game updated to the latest version</li>
+                        <li>Using the Game in compliance with all applicable laws and regulations</li>
+                    </ul>
+                </section>
+
+                <section class="you">
+                    <h2>What You Can't Do</h2>
+                    <p>You may not:</p>
+                    <ul>
+                        <li>Reverse-engineer, decompile, or disassemble the Game</li>
+                        <li>Modify, distribute, or create derivative works from the Game</li>
+                        <li>Use cheats, hacks, or tools that tamper with the Game or its files</li>
+                        <li>Use the Game for any unlawful purpose</li>
+                        <li>Attempt to circumvent any security features or access restrictions</li>
+                    </ul>
+                </section>
+
+                <section class="you">
+                    <h2>Ending Your Use</h2>
+                    <ul>
+                        <li>You may stop using the Game at any time by deleting it from your device.</li>
+                        <li>We may terminate or suspend your access to the Game at any time, with or without cause.</li>
+                        <li>Upon termination, your right to use the Game ends immediately.</li>
+                    </ul>
+                </section>
+
+                <section class="outside">
+                    <h2>Feedback You Send</h2>
+                    <p>Sending feedback is optional. Our feedback form is provided by Tally, and how your submission is handled is described in our <a href="privacy.html">Privacy Policy</a>. By sending us feedback, ideas, or suggestions, you agree that we may use them to improve the Game without owing you compensation or credit. Please don't include sensitive personal information.</p>
+                </section>
+
+                <section class="outside">
+                    <h2>Ads and Third-Party Content</h2>
+                    <p>The Game shows ads provided by third-party advertising networks. We don't operate these networks, and we do not control, select, or endorse the ads they show. Ads are not offers or recommendations from us.</p>
+                    <ul>
+                        <li>Any interaction with an ad, or with a site, app, or service you reach through one, is between you and that third party and is subject to their terms and policies.</li>
+                        <li>We are not responsible for third-party ads or content, or for anything you buy or do as a result of them.</li>
+                        <li>We use the controls available to us to limit inappropriate ads, but we can't guarantee which ads appear.</li>
+                    </ul>
+                    <p>See our <a href="privacy.html">Privacy Policy</a> for how ads relate to your information.</p>
+                </section>
+
+                <section class="outside">
+                    <h2>App Store Terms</h2>
+                    <p><strong>Apple App Store:</strong> If you downloaded the Game from the Apple App Store, you acknowledge that these Terms are between you and Hazy Outpost, not Apple. Apple is not responsible for the Game or its content and has no obligation to provide maintenance or support.</p>
+                    <p><strong>Google Play Store:</strong> If you downloaded the Game from Google Play, you acknowledge that these Terms are between you and Hazy Outpost, not Google. Google is not responsible for the Game or its content and has no obligation to provide maintenance or support.</p>
+                </section>
+
+                <section>
+                    <h2>License</h2>
+                    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to play Big Card Blast for personal, non-commercial purposes on devices that you own or control.</p>
+                </section>
+
+                <section>
+                    <h2>Intellectual Property</h2>
+                    <p>The Game and its original content, artwork, features, and functionality are owned by Hazy Outpost and are protected by international copyright, trademark, and other intellectual property laws. You may not use our trademarks or trade dress without prior written consent.</p>
+                </section>
+
+                <section>
+                    <h2>Entertainment Only</h2>
+                    <p>Big Card Blast is provided for entertainment purposes only. The Game does not offer real-money gambling, and you cannot win real money or prizes by playing it.</p>
+                </section>
+
+                <section>
+                    <h2>Disclaimer of Warranties</h2>
+                    <p>The Game is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied. We do not warrant that:</p>
+                    <ul>
+                        <li>The Game will be uninterrupted, secure, or error-free</li>
+                        <li>Any defects will be corrected</li>
+                        <li>The Game is free of viruses or other harmful components</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by applicable law:</p>
+                    <ul>
+                        <li>We shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
+                        <li>Our total liability shall not exceed the amount you paid for the Game, if any.</li>
+                        <li>We are not responsible for data loss, lost progress, device damage, or any damages arising from playing the Game.</li>
+                        <li>We are not responsible for third-party ads, or for any products, services, or sites you reach through them.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Indemnification</h2>
+                    <p>You agree to indemnify and hold harmless Hazy Outpost from any claims, damages, losses, costs, and expenses (including legal fees) arising from your use of the Game or your violation of these Terms.</p>
+                </section>
+
+                <section>
+                    <h2>Changes to These Terms</h2>
+                    <p>We reserve the right to modify these Terms at any time. Changes take effect immediately upon posting on our website or in the Game. Your continued use of the Game after changes means you accept the new Terms.</p>
+                </section>
+
+                <section>
+                    <h2>Governing Law</h2>
+                    <p>These Terms are governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+                </section>
+
+                <section>
+                    <h2>Severability</h2>
+                    <p>If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions remain in full force and effect.</p>
+                </section>
+
+                <section>
+                    <h2>Entire Agreement</h2>
+                    <p>These Terms are the entire agreement between you and Hazy Outpost regarding the Game and replace all prior agreements.</p>
+                </section>
+
+                <section>
+                    <h2>Contact Us</h2>
+                    <p>Questions about these Terms? Send us a message through our <a href="feedback.html">feedback page</a> or email <a href="mailto:bigcardblast@gmail.com">bigcardblast@gmail.com</a>.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-fun"><span class="s1" aria-hidden="true">♠</span> <span class="s2" aria-hidden="true">♥</span> Thanks for playing! <span class="s3" aria-hidden="true">♦</span> <span class="s4" aria-hidden="true">♣</span></p>
+        <p class="footer-links"><a href="feedback.html">Feedback</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+        <p class="footer-legal">&copy; 2026 Hazy Outpost. All rights reserved.</p>
+    </footer>
+</body>
+</html>
